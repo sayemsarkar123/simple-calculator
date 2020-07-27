@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javaScriptSimpleCalculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div id="display"></div>
+        <ul class="buttons">
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>+</li>
+          <li class="break-row"></li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>-</li>
+          <li class="break-row"></li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>*</li>
+          <li class="break-row"></li>
+          <li>0</li>
+          <li>.</li>
+          <li>/</li>
+          <li>=</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const display = document.getElementById('display');
+      const buttons = document.getElementsByTagName('li');
+      for (let i = 0; i < buttons.length; i++) {
+        const button = buttons[i];
+        button.addEventListener('click', function (event) {
+          if (i == 18) {
+            equalButton();
+          } else {
+            updateDisplayText(i, buttons);
+          }
+        });
+      }
+
+      function updateDisplayText(i, buttons) {
+        display.innerText = display.innerText + buttons[i].innerText;
+      }
+
+      function equalButton() {
+        display.innerText = eval(display.innerText);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.container {
+  background: #ECEDEF;
+  display: flex;
+  height: 100vh;
+}
+
+.calculator {
+  flex-basis: 391px;
+  background: mistyrose;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#display {
+  flex-basis: 170px;
+  background: red;
+  border-radius: 20px 20px 0 0;
+  font-size: 78px;
+  font-weight: 800;
+  color: #5C5B59;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.buttons {
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0 15px;
+}
+
+ul.buttons li {
+  flex-basis: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: 600;
+  background: #ECEDEF;
+  color: #5c5b59;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+ul.buttons li:hover {
+  background: #FF060A;
+  color: #fff;
+}
+
+.break-row {
+  flex-basis: 100% !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
